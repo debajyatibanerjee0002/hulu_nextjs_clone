@@ -4,7 +4,6 @@ import { forwardRef } from "react";
 import { HandThumbUpIcon } from "@heroicons/react/24/outline";
 
 const Thumbnail = forwardRef(({ result }, ref) => {
-  //   console.log(result);
   const BASE_URL = "https://image.tmdb.org/t/p/original";
   return (
     <div
@@ -17,6 +16,7 @@ const Thumbnail = forwardRef(({ result }, ref) => {
           `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
           `${BASE_URL}${result.poster_path}`
         }
+        alt={result.title || result.original_name}
         height={1080}
         width={1920}
       />
